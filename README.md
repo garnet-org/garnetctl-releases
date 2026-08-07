@@ -7,12 +7,21 @@ This repository hosts the official binary releases. Linux and macOS builds (x86_
 ## Install
 
 ```bash
-ARCH=$(uname -m); [ "$ARCH" = "aarch64" ] && ARCH=arm64
-curl -sL "https://github.com/garnet-org/garnetctl-releases/releases/latest/download/garnetctl_$(uname -s)_${ARCH}.tar.gz" | tar xz garnetctl
+VERSION=$(curl -sI https://github.com/garnet-org/garnetctl-releases/releases/latest | awk -F'/tag/v' 'tolower($0) ~ /^location:/ {print $2}' | tr -d '\r')
+ARCH=$(uname -m); if [ "$ARCH" = "aarch64" ]; then ARCH=arm64; fi
+ASSET="garnetctl_$(uname -s)_${ARCH}.tar.gz"
+
+curl -sLO "https://github.com/garnet-org/garnetctl-releases/releases/download/v${VERSION}/${ASSET}"
+curl -sLO "https://github.com/garnet-org/garnetctl-releases/releases/download/v${VERSION}/garnetctl_${VERSION}_checksums.txt"
+grep "$ASSET" "garnetctl_${VERSION}_checksums.txt" | sha256sum -c -
+
+tar xzf "$ASSET" garnetctl
 sudo install garnetctl /usr/local/bin/
 
 garnetctl version
 ```
+
+On macOS, replace `sha256sum -c -` with `shasum -a 256 -c -`.
 
 ## Quick start
 
