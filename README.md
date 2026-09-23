@@ -39,3 +39,7 @@ Every `get`/`list` command supports `--format table|json|yaml`, making the CLI d
 ## Documentation
 
 - Full command reference: run `garnetctl --help`, CLI documentation, and additionally: [docs](https://docs.garnet.ai)
+
+## Notes
+
+- Today, garnetctl is an experimental interface and not recommended for production use. For questions or support, reach out at engineering@garnet.ai or create an issue in this repo. 
