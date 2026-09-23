@@ -42,4 +42,4 @@ Every `get`/`list` command supports `--format table|json|yaml`, making the CLI d
 
 ## Notes
 
-- Today, garnetctl is an experimental interface and not recommended for production use. For questions or support, reach out at engineering@garnet.ai or create an issue in this repo. 
+- Today, garnetctl is an experimental interface and not recommended for production use. For questions or support, reach out at support@garnet.ai or create an issue in this repo. 
