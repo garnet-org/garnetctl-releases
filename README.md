@@ -1,6 +1,6 @@
 # garnetctl
 
-`garnetctl` is the command line interface for [Garnet](https://garnet.ai) — manage agents, events, issues, network policies, webhooks, and Runtime Review profiles from your terminal or CI.
+`garnetctl` is the command line interface for [Garnet](https://garnet.ai) — serving as a interface to the Garnet API, optimized for work in CI, terminals or agentic tool use.
 
 This repository hosts the official binary releases. Linux and macOS builds (x86_64 and arm64) are attached to every [release](https://github.com/garnet-org/garnetctl-releases/releases), along with a `garnetctl_<version>_checksums.txt` for integrity verification.
 
@@ -38,5 +38,4 @@ Every `get`/`list` command supports `--format table|json|yaml`, making the CLI d
 
 ## Documentation
 
-- Full command reference: run `garnetctl --help` or see the [CLI documentation](https://github.com/garnet-org/control-plane/blob/main/cli/docs/cli.md)
-- Garnet platform docs: https://garnet.ai
+- Full command reference: run `garnetctl --help`, CLI documentation, and additionally: [docs](https://docs.garnet.ai)
